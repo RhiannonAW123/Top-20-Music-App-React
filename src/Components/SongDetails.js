@@ -1,8 +1,17 @@
 import React from 'react';
 
-const SongDetails = () => {
+const SongDetails = ({artist, title, loaded, image}) => {
+
+    if(!loaded){
+        return <p>Loading ....</p>
+    }   
+
     return (
-        <p>Song Stuff</p>
+        <>
+        <div id="song">
+        <img class='image' src={image} alt='Artist'></img> <li>{artist} {title} </li>
+        </div>
+        </>
     );
 }
 
